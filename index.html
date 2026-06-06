@@ -254,6 +254,45 @@
   .tag-blue { color: var(--accent-blue); }
   .tag-gray { color: var(--accent-gray); }
 
+  /* Sub-items inside card */
+  .card-subitems {
+    display: flex; flex-direction: column; gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .subitem-link {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 10px; border-radius: 8px;
+    background: rgba(255,77,77,0.06);
+    border: 1px solid rgba(255,77,77,0.15);
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+    cursor: pointer;
+  }
+
+  .subitem-link:hover {
+    background: rgba(255,77,77,0.13);
+    border-color: rgba(255,77,77,0.35);
+  }
+
+  .subitem-link:hover .subitem-arrow { transform: translateX(3px); }
+
+  .subitem-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent-red); flex-shrink: 0; opacity: 0.8;
+  }
+
+  .subitem-text {
+    font-size: 12px; color: var(--text-secondary);
+    font-family: var(--mono); flex: 1; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .subitem-arrow {
+    font-size: 11px; color: var(--accent-red); opacity: 0.6;
+    transition: transform 0.2s; flex-shrink: 0;
+  }
+
   /* Recent cases */
   .recent-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; }
 
@@ -393,6 +432,13 @@
       </div>
       <div class="card-title">外傷個案</div>
       <div class="card-desc">多發性外傷、骨折、頭部傷害、穿刺傷及重大事故傷患之急救與處置分析</div>
+      <div class="card-subitems">
+        <a class="subitem-link" href="TraumaCase/TraumaPaceMakerInfection.html" target="_blank" onclick="event.stopPropagation()">
+          <div class="subitem-dot"></div>
+          <span class="subitem-text">TraumaPaceMakerInfection</span>
+          <span class="subitem-arrow">↗</span>
+        </a>
+      </div>
       <div class="card-footer">
         <span class="count-badge">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
